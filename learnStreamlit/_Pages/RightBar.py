@@ -53,11 +53,11 @@ def Cal(key,manager,sql):
         for j in range(7):
             with new_col[j]:
                 if days[i][j] != 0:
-                    if sql.Checkin(year,month,days[i][j]):
+                    if sql.Checkin(manager.getUser(),year,month,days[i][j]):
                         st.write(  f'<span style="background-color: violet; border-radius: 50%;  display: inline-block; width: 3em; height: 3em; text-align: center; line-height: 3em;">{days[i][j]}</span>',unsafe_allow_html=True)
                     else:
                         st.write(  f'<span style="background-color: # fff; border-radius: 50%;  display: inline-block; width: 3em; height: 3em; text-align: center; line-height: 3em;">{days[i][j]}</span>',unsafe_allow_html=True)
-    if not sql.Checkin(year,month,thisday):
+    if not sql.Checkin(manager.getUser(),year,month,thisday):
         with stylable_container(
                 "put_in_card"+key,
                 css_styles="""
