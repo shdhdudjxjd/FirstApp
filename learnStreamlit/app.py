@@ -206,7 +206,7 @@ class app:
                         }
                                                                        """,
                 ):
-                    args=(self.manger.getUser(),newName,newPass,head,birthday,file)
+                    args=(self.manger.getUser(),newPass,head,birthday,file)
                     if st.button('确定',use_container_width=True,key="confirm_change_message",on_click=self.updateMessage,args=args):
                         st.rerun()
 
@@ -226,8 +226,8 @@ class app:
                         st.rerun()
 
 
-    def updateMessage(self,oldname,newName,newPass,head,birthday,file):
-            self.Sql.changeMessage(oldname,newName,newPass,head,birthday)
+    def updateMessage(self,oldname,newPass,head,birthday,file):
+            self.Sql.changeMessage(oldname,newPass,head,birthday)
             if head!='':
                 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
                 head1=os.path.join(BASE_DIR, head)
