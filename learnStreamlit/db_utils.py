@@ -7,7 +7,7 @@ import os
 
 class Sql:
     def __init__(self):
-        self.conn=sqlite3.connect("appData.db",check_same_thread=False)
+        self.conn=sqlite3.connect("/mount/src/firstapp/appData.db",check_same_thread=False)
         self.cursor=self.conn.cursor()
         print("当前工作目录:", os.getcwd())
         print("文件列表:", os.listdir())
