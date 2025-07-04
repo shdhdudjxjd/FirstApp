@@ -592,10 +592,8 @@ class Sql:
 
         return  event
 
-    def changeMessage(self,oldname,newName,newPass,head,birthday):
+    def changeMessage(self,oldname,newPass,head,birthday):
         updateFile=[]
-        if newName!='':
-            updateFile.append(f'name="{newName}"')
         if newPass!='':
             updateFile.append(f'password={newPass}')
         if head!='':
