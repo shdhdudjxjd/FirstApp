@@ -2,10 +2,11 @@ import streamlit as st
 import json
 from . import RightBar
 import os
+from pathlib import Path
 def wordBook_page(Sql,manager):
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    current_dir = Path(__file__).parent
     fileName='bookList.json'
-    fileName=os.path.join(BASE_DIR, fileName)
+    fileName=current_dir/fileName
     with open(fileName, 'r', encoding='utf-8') as f:
         Books = json.load(f)
     col_1, col_2 = st.columns([0.7, 0.3])
