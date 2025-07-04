@@ -7,7 +7,9 @@ import os
 
 class Sql:
     def __init__(self):
-        self.conn=sqlite3.connect("/mount/src/firstapp/appData.db",check_same_thread=False)
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        DB_PATH = os.path.join(BASE_DIR, "appData.db")
+        self.conn=sqlite3.connect(DB_PATH,check_same_thread=False)
         self.cursor=self.conn.cursor()
         self.cursor.execute("SELECT name FROM sqlite_master WHERE type=table")
         tables = self.cursor.fetchall()
