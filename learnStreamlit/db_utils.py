@@ -2,12 +2,16 @@ import  sqlite3
 from zipfile import error
 import  json
 import random
+import os
 
 
 class Sql:
     def __init__(self):
         self.conn=sqlite3.connect("appData.db",check_same_thread=False)
         self.cursor=self.conn.cursor()
+        print("当前工作目录:", os.getcwd())
+        print("文件列表:", os.listdir())
+        print("数据库路径:", os.path.abspath("appData.db"))
 
 
 
