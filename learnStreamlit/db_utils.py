@@ -9,7 +9,7 @@ class Sql:
     def __init__(self):
         self.conn=sqlite3.connect("/mount/src/firstapp/appData.db",check_same_thread=False)
         self.cursor=self.conn.cursor()
-        cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
+        self.cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
         tables = cursor.fetchall()
         print(tables)
 
