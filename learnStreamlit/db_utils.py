@@ -536,13 +536,13 @@ class Sql:
             print(e)
             self.conn.rollback()
 
-    def Checkin(self,year,month,day):
+    def Checkin(self,user,year,month,day):
         query = '''
                 select count(*)
                 from Checkin
-                where year=? and month=? and day=?
+                where user=? and year=? and month=? and day=?
                 '''
-        self.cursor.execute(query,(year,month,day))
+        self.cursor.execute(query,(user,year,month,day))
         count=self.cursor.fetchone()[0]
         return count
 
