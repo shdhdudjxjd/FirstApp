@@ -35,6 +35,8 @@ class app:
             col1, col2, col3 = st.columns(3)  # 比例可调整
             with col2:
                 img=self.Sql.getMessage(self.manger.getUser())[0]
+                BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+                img=os.path.join(BASE_DIR, img)
                 st.image(img,width=100)
                 st.markdown(f'<h3 style="text-align:center;">{self.manger.getUser()}</h3>', unsafe_allow_html=True)
             with stylable_container(
