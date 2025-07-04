@@ -9,9 +9,9 @@ class Sql:
     def __init__(self):
         self.conn=sqlite3.connect("/mount/src/firstapp/appData.db",check_same_thread=False)
         self.cursor=self.conn.cursor()
-        print("当前工作目录:", os.getcwd())
-        print("文件列表:", os.listdir())
-        print("数据库路径:", os.path.abspath("appData.db"))
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
+        tables = cursor.fetchall()
+        print(tables)
 
 
 
