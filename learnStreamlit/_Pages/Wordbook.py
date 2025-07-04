@@ -3,7 +3,10 @@ import json
 from . import RightBar
 
 def wordBook_page(Sql,manager):
-    with open('bookList.json', 'r', encoding='utf-8') as f:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    fileName='bookList.json'
+    fileName=os.path.join(BASE_DIR, fileName)
+    with open(fileName, 'r', encoding='utf-8') as f:
         Books = json.load(f)
     col_1, col_2 = st.columns([0.7, 0.3])
     with col_1:
