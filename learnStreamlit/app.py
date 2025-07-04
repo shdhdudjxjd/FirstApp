@@ -184,7 +184,7 @@ class app:
                 st.write('图片预览')
                 st.image(file,width=300)
 
-            newName=st.text_input('请输入你的新姓名🆔')
+        
             newPass=st.text_input('请输入新密码🔐',type='password')
             cPass = st.text_input('确认密码🔐', type='password')
             head=file
