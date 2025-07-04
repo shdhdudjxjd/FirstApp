@@ -228,7 +228,9 @@ class app:
 
     def updateMessage(self,oldname,newName,newPass,head,birthday,file):
             self.Sql.changeMessage(oldname,newName,newPass,head,birthday)
-            with open(head, "wb") as f:
+            BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+            head1=os.path.join(BASE_DIR, head)
+            with open(head1, "wb") as f:
                 f.write(file.getbuffer())
 
 
