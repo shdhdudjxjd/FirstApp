@@ -23,7 +23,9 @@ def wordBook_page(Sql,manager):
 
                             cols = st.columns([1.2, 3, 1.5])
                             with cols[0]:
-                                st.image(book['picture'], width=100)
+                                BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+                                img=os.path.join(BASE_DIR, book['picture'])
+                                st.image(img, width=100)
                             with cols[1]:
                                 st.subheader(book["title"])
                                 st.caption(book["subtitle"])
