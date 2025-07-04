@@ -9,6 +9,7 @@ from _Pages import Wordbook
 from _Pages import Staticist
 import sesstion_managment
 from streamlit_extras.stylable_container import stylable_container
+import os
 class app:
     def __init__(self):
         self.Sql=db_utils.Sql()
