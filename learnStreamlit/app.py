@@ -160,6 +160,8 @@ class app:
         messages,change_message = st.tabs(tabs)
         message = self.Sql.getMessage(self.manger.getUser())
         img =message[0]
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        img=os.path.join(BASE_DIR, img)
         birthday=message[1]
         print(birthday)
         with messages:
