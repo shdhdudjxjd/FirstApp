@@ -4,7 +4,7 @@ from . import RightBar
 import os
 from pathlib import Path
 def wordBook_page(Sql,manager):
-    fileName='./bookList.json'
+    fileName='/mount/src/firstapp/learnStreamlit/bookList.json'
     with open(fileName, 'r', encoding='utf-8') as f:
         Books = json.load(f)
     col_1, col_2 = st.columns([0.7, 0.3])
